@@ -302,7 +302,7 @@ Durante o ciclo de vida do projeto, vários artefatos são gerados:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/lucasnumaboa/kobe-prediction.git
+   git clone https://github.com/lucasnumaboa/kobe-kedro-infnet.git
    cd kobe-prediction
    ```
 
