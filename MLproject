@@ -1,0 +1,22 @@
+name: kobe_prediction_project
+
+conda_env: conda.yaml
+
+entry_points:
+  data_processing:
+    command: "python -m src.kobe_prediction.pipelines.data_processing.run"
+    
+  train_regression:
+    command: "python -m src.kobe_prediction.pipelines.model_training.run_regression"
+    
+  train_classification:
+    command: "python -m src.kobe_prediction.pipelines.model_training.run_classification"
+    
+  evaluate_models:
+    command: "python -m src.kobe_prediction.pipelines.model_evaluation.run"
+    
+  deploy_model:
+    command: "python -m src.kobe_prediction.pipelines.deployment.run"
+    
+  main:
+    command: "python -m src.kobe_prediction.run_pipeline"
