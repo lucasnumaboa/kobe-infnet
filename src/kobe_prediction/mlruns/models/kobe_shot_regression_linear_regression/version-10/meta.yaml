@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744483952587
+current_stage: None
+description: null
+last_updated_timestamp: 1744483952587
+name: kobe_shot_regression_linear_regression
+run_id: d8d0fdf0d3344e5cb4c0065d1765837e
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/683110438957487888/d8d0fdf0d3344e5cb4c0065d1765837e/artifacts/regression_models/linear_regression
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/683110438957487888/d8d0fdf0d3344e5cb4c0065d1765837e/artifacts/regression_models/linear_regression
+user_id: null
+version: 10

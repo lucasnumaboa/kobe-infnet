@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/fa364b758424401ea7ffc24483acc08a/artifacts
+end_time: 1744487857879
+entry_point_name: ''
+experiment_id: '536417645950866813'
+lifecycle_stage: active
+run_id: fa364b758424401ea7ffc24483acc08a
+run_name: regression_gradient_boosting
+run_uuid: fa364b758424401ea7ffc24483acc08a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744487852831
+status: 3
+tags: []
+user_id: PC2

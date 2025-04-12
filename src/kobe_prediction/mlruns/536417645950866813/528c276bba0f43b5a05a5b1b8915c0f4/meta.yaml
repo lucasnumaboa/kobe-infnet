@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/528c276bba0f43b5a05a5b1b8915c0f4/artifacts
+end_time: 1744492486568
+entry_point_name: ''
+experiment_id: '536417645950866813'
+lifecycle_stage: active
+run_id: 528c276bba0f43b5a05a5b1b8915c0f4
+run_name: regression_random_forest
+run_uuid: 528c276bba0f43b5a05a5b1b8915c0f4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744492480971
+status: 3
+tags: []
+user_id: PC2

@@ -1,0 +1,20 @@
+artifact_path: regression_models/elastic_net
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.4.1.post1
+mlflow_version: 2.11.3
+model_size_bytes: 732
+model_uuid: 674df5853a134ecc94a6cb6b620cd23b
+run_id: 569ec43e7bad49a482ff9236915b650a
+utc_time_created: '2025-04-12 20:44:14.335751'

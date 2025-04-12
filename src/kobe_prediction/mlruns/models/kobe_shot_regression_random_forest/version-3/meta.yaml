@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744482832696
+current_stage: None
+description: null
+last_updated_timestamp: 1744482832696
+name: kobe_shot_regression_random_forest
+run_id: 7061431455ad4253a1e9181ff460f2dc
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/834497134898275840/7061431455ad4253a1e9181ff460f2dc/artifacts/regression_models/random_forest
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/834497134898275840/7061431455ad4253a1e9181ff460f2dc/artifacts/regression_models/random_forest
+user_id: null
+version: 3

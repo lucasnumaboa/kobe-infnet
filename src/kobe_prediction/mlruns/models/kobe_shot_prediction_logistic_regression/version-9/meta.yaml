@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744485301755
+current_stage: None
+description: null
+last_updated_timestamp: 1744485301755
+name: kobe_shot_prediction_logistic_regression
+run_id: 9a2fd31cd3a746988e8c945d6f434a0c
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/9a2fd31cd3a746988e8c945d6f434a0c/artifacts/models/logistic_regression
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/9a2fd31cd3a746988e8c945d6f434a0c/artifacts/models/logistic_regression
+user_id: null
+version: 9

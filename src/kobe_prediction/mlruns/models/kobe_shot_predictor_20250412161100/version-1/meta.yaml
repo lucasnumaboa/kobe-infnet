@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744485066404
+current_stage: None
+description: null
+last_updated_timestamp: 1744485066404
+name: kobe_shot_predictor_20250412161100
+run_id: 73319d3709244a06a42a8106bbfd6071
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/73319d3709244a06a42a8106bbfd6071/artifacts/deployed_classification_model
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/73319d3709244a06a42a8106bbfd6071/artifacts/deployed_classification_model
+user_id: null
+version: 1

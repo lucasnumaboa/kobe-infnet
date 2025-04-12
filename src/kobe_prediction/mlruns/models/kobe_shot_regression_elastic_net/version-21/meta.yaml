@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744490659621
+current_stage: None
+description: null
+last_updated_timestamp: 1744490659621
+name: kobe_shot_regression_elastic_net
+run_id: 569ec43e7bad49a482ff9236915b650a
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/569ec43e7bad49a482ff9236915b650a/artifacts/regression_models/elastic_net
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/569ec43e7bad49a482ff9236915b650a/artifacts/regression_models/elastic_net
+user_id: null
+version: 21
