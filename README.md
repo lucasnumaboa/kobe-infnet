@@ -334,6 +334,15 @@ Para executar o pipeline unificado (recomendado):
 python unified_training_pipeline.py
 ```
 
+
+Após realizar a execução pode realizar o teste da simulação de arremesso executando:
+```
+streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\kobe_shot_predictor_app.py
+```
+![Arremesso do Kobe](images/kobe-arremessos/1.jpg)
+
+
+
 Este comando realizará:
 1. Processamento dos dados
 2. Treinamento de múltiplos modelos
