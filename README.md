@@ -334,6 +334,10 @@ Para executar o pipeline unificado (recomendado):
 python unified_training_pipeline.py
 ```
 
+Caso os dados obtidos não sejam do agrado pode-se retreinar o modelo chamando:
+```bash
+python retraining_pipeline.py
+```
 
 Após realizar a execução pode realizar o teste da simulação de arremesso executando:
 ```
