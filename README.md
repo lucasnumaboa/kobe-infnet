@@ -339,7 +339,14 @@ Após realizar a execução pode realizar o teste da simulação de arremesso ex
 ```
 streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\kobe_shot_predictor_app.py
 ```
-![Arremesso do Kobe](images/kobe-arremessos/1.jpg)
+![Arremesso do Kobe](images/kobe-arremessos/1.JPG)
+
+Para ver as demais informações geradas pela aplicação:
+```
+streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+```
+
+![Imagem Aplicação](https://raw.githubusercontent.com/lucasnumaboa/kobe-infnet/main/images/aplicação/3.JPG)
 
 
 
