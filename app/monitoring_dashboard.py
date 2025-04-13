@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -178,7 +179,7 @@ with tab2:
         
         with col2:
             # Análise por período
-            st.subheader("Predições por Período (Quarto)")
+            st.subheader("Predições por Período (Quarter)")
             
             if 'period' in predictions.columns and 'prediction_label' in predictions.columns:
                 period_conversion = predictions.groupby('period')['prediction_label'].mean().reset_index()
@@ -342,4 +343,4 @@ with tab3:
 
 # Rodapé
 st.markdown("---")
-st.caption("Dashboard de Monitoramento do Modelo - Kobe Bryant Shot Prediction - Desenvolvido com Streamlit")
+st.caption("Dashboard de Monitoramento do Modelo - Kobe Bryant Shot Prediction - Powered by Streamlit")

@@ -7727,3 +7727,527 @@ weighted avg       0.56      0.57      0.56      4057
 [2025-04-12 19:21:29] PIPELINE: Component deploy completed successfully
 [2025-04-12 19:21:29] PIPELINE: Full pipeline completed successfully
 [2025-04-12 19:21:29] PIPELINE: To run the Streamlit app, execute: streamlit run app/kobe_shot_predictor_app.py
+[2025-04-12 20:04:01] PIPELINE: Initializing MLflow experiment
+[2025-04-12 20:04:01] PIPELINE: Using existing experiment: kobe_shot_prediction
+[2025-04-12 20:04:01] PIPELINE: Starting full pipeline execution
+[2025-04-12 20:04:01] PIPELINE: Initializing MLflow experiment
+[2025-04-12 20:04:01] PIPELINE: Using existing experiment: kobe_shot_prediction
+[2025-04-12 20:04:01] PIPELINE: Using experiment ID: 536417645950866813
+[2025-04-12 20:04:02] PIPELINE: Starting component: data_processing
+[2025-04-12 20:04:02] PIPELINE: Running pipeline component: data_processing
+[2025-04-12 20:04:03] DATA PROCESSING: Starting data processing pipeline
+[2025-04-12 20:04:03] DATA PROCESSING: Project root directory: F:\0-PROJETO-MACHINE-COPILOT
+[2025-04-12 20:04:03] DATA PROCESSING: Processing development dataset
+[2025-04-12 20:04:03] DATA PROCESSING: Reading data from: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_dev.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Loading data from F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_dev.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Original development data shape: (24271, 25)
+[2025-04-12 20:04:03] DATA PROCESSING: Filtering data to include only specified columns
+[2025-04-12 20:04:03] DATA PROCESSING: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 20:04:03] DATA PROCESSING: Initial filtered data shape: (24271, 7)
+[2025-04-12 20:04:03] DATA PROCESSING: Data shape after removing missing values: (20285, 7)
+[2025-04-12 20:04:03] DATA PROCESSING: Filtered development data dimension: 20285 rows, 7 columns
+[2025-04-12 20:04:03] DATA PROCESSING: Saving filtered data to: F:\0-PROJETO-MACHINE-COPILOT\data\processed\data_filtered.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Splitting data with test_size=0.2 using stratified sampling
+[2025-04-12 20:04:03] DATA PROCESSING: Training set shape: (16228, 7), Testing set shape: (4057, 7)
+[2025-04-12 20:04:03] DATA PROCESSING: Saving training data to: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Saving test data to: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Development data processed and saved
+[2025-04-12 20:04:03] DATA PROCESSING: Loading production dataset
+[2025-04-12 20:04:03] DATA PROCESSING: Reading data from: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Loading data from F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 20:04:03] DATA PROCESSING: Production data shape: (6426, 25)
+[2025-04-12 20:04:03] DATA PROCESSING: Data processing pipeline completed successfully
+[2025-04-12 20:04:03] PIPELINE: Completed pipeline component: data_processing, result: True
+[2025-04-12 20:04:03] PIPELINE: Component data_processing completed successfully
+[2025-04-12 20:04:03] PIPELINE: Starting component: train_regression
+[2025-04-12 20:04:03] PIPELINE: Running pipeline component: train_regression
+[2025-04-12 20:04:04] REGRESSION TRAINING: Starting regression model training pipeline
+[2025-04-12 20:04:04] REGRESSION TRAINING: Project root directory: F:\0-PROJETO-MACHINE-COPILOT
+[2025-04-12 20:04:04] REGRESSION TRAINING: Loading training data
+[2025-04-12 20:04:04] REGRESSION TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 20:04:04] REGRESSION TRAINING: Loading test data for evaluation
+[2025-04-12 20:04:04] REGRESSION TRAINING: Loading test data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:04:04] REGRESSION TRAINING: Preparing features and target variable
+[2025-04-12 20:04:04] REGRESSION TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 20:04:04] REGRESSION TRAINING: Preparing features and target variable
+[2025-04-12 20:04:04] REGRESSION TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 20:04:04] REGRESSION TRAINING: Training Linear Regression model
+[2025-04-12 20:04:04] REGRESSION TRAINING: Linear Regression model trained successfully
+[2025-04-12 20:04:04] REGRESSION TRAINING: Evaluating LinearRegression model
+[2025-04-12 20:04:04] REGRESSION TRAINING: MSE: 0.2426, RMSE: 0.4925, MAE: 0.4844, R²: 0.0276
+[2025-04-12 20:04:04] REGRESSION TRAINING: Training ElasticNet model with hyperparameter tuning
+[2025-04-12 20:04:09] REGRESSION TRAINING: ElasticNet best parameters: {'alpha': 0.1, 'l1_ratio': 0.1}
+[2025-04-12 20:04:09] REGRESSION TRAINING: ElasticNet model trained successfully
+[2025-04-12 20:04:09] REGRESSION TRAINING: Evaluating ElasticNet model
+[2025-04-12 20:04:09] REGRESSION TRAINING: MSE: 0.2428, RMSE: 0.4928, MAE: 0.4852, R²: 0.0268
+[2025-04-12 20:04:09] REGRESSION TRAINING: Training Random Forest model
+[2025-04-12 20:04:14] REGRESSION TRAINING: Random Forest model trained successfully
+[2025-04-12 20:04:14] REGRESSION TRAINING: Evaluating RandomForestRegressor model
+[2025-04-12 20:04:14] REGRESSION TRAINING: MSE: 0.2641, RMSE: 0.5139, MAE: 0.4803, R²: -0.0584
+[2025-04-12 20:04:14] REGRESSION TRAINING: Training Gradient Boosting model
+[2025-04-12 20:04:15] REGRESSION TRAINING: Gradient Boosting model trained successfully
+[2025-04-12 20:04:15] REGRESSION TRAINING: Evaluating GradientBoostingRegressor model
+[2025-04-12 20:04:15] REGRESSION TRAINING: MSE: 0.2404, RMSE: 0.4903, MAE: 0.4793, R²: 0.0366
+[2025-04-12 20:04:15] REGRESSION TRAINING: Saving linear_regression model
+[2025-04-12 20:04:15] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 20:04:24] REGRESSION TRAINING: Model linear_regression registered with MLflow
+[2025-04-12 20:04:24] REGRESSION TRAINING: Saving elastic_net model
+[2025-04-12 20:04:24] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 20:04:29] REGRESSION TRAINING: Model elastic_net registered with MLflow
+[2025-04-12 20:04:29] REGRESSION TRAINING: Saving random_forest model
+[2025-04-12 20:04:29] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 20:04:35] REGRESSION TRAINING: Model random_forest registered with MLflow
+[2025-04-12 20:04:35] REGRESSION TRAINING: Saving gradient_boosting model
+[2025-04-12 20:04:35] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 20:04:41] REGRESSION TRAINING: Model gradient_boosting registered with MLflow
+[2025-04-12 20:04:41] REGRESSION TRAINING: Best regression model: gradient_boosting with R² = 0.0366
+[2025-04-12 20:04:41] REGRESSION TRAINING: Regression model training pipeline completed successfully
+[2025-04-12 20:04:41] PIPELINE: Completed pipeline component: train_regression, result: True
+[2025-04-12 20:04:41] PIPELINE: Component train_regression completed successfully
+[2025-04-12 20:04:41] PIPELINE: Starting component: train_classification
+[2025-04-12 20:04:41] PIPELINE: Running pipeline component: train_classification
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Starting classification model training pipeline
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Loading training and testing data
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Loading testing data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Training data shape: (16228, 7), Testing data shape: (4057, 7)
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Preparing features and target variable
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Preparing features and target variable
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Training Logistic Regression model
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Logistic Regression model trained successfully
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Logistic Regression Log Loss: 0.6793
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Logistic Regression F1 Score: 0.5368
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.61      0.59      2120
+         1.0       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Saving logistic_regression model
+[2025-04-12 20:04:41] CLASSIFICATION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Model logistic_regression registered with MLflow
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Training Decision Tree model
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Decision Tree model trained successfully
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Decision Tree Log Loss: 0.6829
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Decision Tree F1 Score: 0.4556
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.82      0.68      2120
+         1.0       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Saving decision_tree model
+[2025-04-12 20:04:46] CLASSIFICATION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 20:04:52] CLASSIFICATION TRAINING: Model decision_tree registered with MLflow
+[2025-04-12 20:04:52] CLASSIFICATION TRAINING: Logistic Regression model selected as the best model (lower log loss)
+[2025-04-12 20:04:52] CLASSIFICATION TRAINING: Classification model training pipeline completed successfully
+[2025-04-12 20:04:52] PIPELINE: Completed pipeline component: train_classification, result: True
+[2025-04-12 20:04:52] PIPELINE: Component train_classification completed successfully
+[2025-04-12 20:04:52] PIPELINE: Starting component: evaluate
+[2025-04-12 20:04:52] PIPELINE: Running pipeline component: evaluate
+[2025-04-12 20:04:53] MODEL EVALUATION: Starting model evaluation pipeline
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading test data
+[2025-04-12 20:04:53] MODEL EVALUATION: Reading test data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:04:53] MODEL EVALUATION: Preparing features and target variable
+[2025-04-12 20:04:53] MODEL EVALUATION: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading trained models
+[2025-04-12 20:04:53] MODEL EVALUATION: Looking for regression models in: F:\0-PROJETO-MACHINE-COPILOT\models\regression
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading regression model: elastic_net from F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading regression model: gradient_boosting from F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading regression model: linear_regression from F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading regression model: random_forest from F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 20:04:53] MODEL EVALUATION: Looking for classification models in: F:\0-PROJETO-MACHINE-COPILOT\models\classification
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading classification model: decision_tree from F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading classification model: logistic_regression from F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 20:04:53] MODEL EVALUATION: Loading classification model: random_forest from F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 20:04:53] MODEL EVALUATION: Loaded 4 regression models and 3 classification models
+[2025-04-12 20:04:53] MODEL EVALUATION: Evaluating regression models
+[2025-04-12 20:04:53] MODEL EVALUATION: Evaluating regression model: elastic_net
+[2025-04-12 20:04:53] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:53] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:53] MODEL EVALUATION: Regression Metrics - MSE: 0.2428, RMSE: 0.4928, R²: 0.0268
+[2025-04-12 20:04:53] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5726, Precision: 0.5625, Recall: 0.4713, F1: 0.5129, AUC: 0.5908
+[2025-04-12 20:04:53] MODEL EVALUATION: Confusion Matrix:
+[[1410  710]
+ [1024  913]]
+[2025-04-12 20:04:54] MODEL EVALUATION: Evaluating regression model: gradient_boosting
+[2025-04-12 20:04:54] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:54] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:54] MODEL EVALUATION: Regression Metrics - MSE: 0.2404, RMSE: 0.4903, R²: 0.0366
+[2025-04-12 20:04:54] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5913, Precision: 0.6175, Recall: 0.3784, F1: 0.4693, AUC: 0.5960
+[2025-04-12 20:04:54] MODEL EVALUATION: Confusion Matrix:
+[[1666  454]
+ [1204  733]]
+[2025-04-12 20:04:55] MODEL EVALUATION: Evaluating regression model: linear_regression
+[2025-04-12 20:04:55] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:55] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:55] MODEL EVALUATION: Regression Metrics - MSE: 0.2426, RMSE: 0.4925, R²: 0.0276
+[2025-04-12 20:04:55] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5709, Precision: 0.5600, Recall: 0.4724, F1: 0.5125, AUC: 0.5955
+[2025-04-12 20:04:55] MODEL EVALUATION: Confusion Matrix:
+[[1401  719]
+ [1022  915]]
+[2025-04-12 20:04:56] MODEL EVALUATION: Evaluating regression model: random_forest
+[2025-04-12 20:04:56] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:56] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:56] MODEL EVALUATION: Regression Metrics - MSE: 0.2641, RMSE: 0.5139, R²: -0.0584
+[2025-04-12 20:04:56] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5484, Precision: 0.5270, Recall: 0.5281, F1: 0.5276, AUC: 0.5621
+[2025-04-12 20:04:56] MODEL EVALUATION: Confusion Matrix:
+[[1202  918]
+ [ 914 1023]]
+[2025-04-12 20:04:57] MODEL EVALUATION: Evaluated 4 regression models
+[2025-04-12 20:04:57] MODEL EVALUATION: Evaluating classification models
+[2025-04-12 20:04:57] MODEL EVALUATION: Evaluating classification model: decision_tree
+[2025-04-12 20:04:57] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:57] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:57] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5982, Precision: 0.6452, Recall: 0.3521, F1: 0.4556
+[2025-04-12 20:04:57] MODEL EVALUATION: AUC: 0.5943
+[2025-04-12 20:04:57] MODEL EVALUATION: Confusion Matrix:
+[[1745  375]
+ [1255  682]]
+[2025-04-12 20:04:57] MODEL EVALUATION: Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.58      0.82      0.68      2120
+           1       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 20:04:58] MODEL EVALUATION: Evaluating classification model: logistic_regression
+[2025-04-12 20:04:58] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:58] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:04:58] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5674, Precision: 0.5491, Recall: 0.5250, F1: 0.5368
+[2025-04-12 20:04:58] MODEL EVALUATION: AUC: 0.5945
+[2025-04-12 20:04:58] MODEL EVALUATION: Confusion Matrix:
+[[1285  835]
+ [ 920 1017]]
+[2025-04-12 20:04:58] MODEL EVALUATION: Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.58      0.61      0.59      2120
+           1       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 20:04:59] MODEL EVALUATION: Evaluating classification model: random_forest
+[2025-04-12 20:04:59] MODEL EVALUATION: Feature names esperadas pelo modelo: ['playoffs', 'minutes_remaining', 'period', 'shot_distance', 'lat', 'lon']
+[2025-04-12 20:04:59] MODEL EVALUATION: Colunas reordenadas para avaliação: ['playoffs', 'minutes_remaining', 'period', 'shot_distance', 'lat', 'lon']
+[2025-04-12 20:04:59] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5657, Precision: 0.5477, Recall: 0.5188, F1: 0.5329
+[2025-04-12 20:04:59] MODEL EVALUATION: AUC: 0.5699
+[2025-04-12 20:04:59] MODEL EVALUATION: Confusion Matrix:
+[[1290  830]
+ [ 932 1005]]
+[2025-04-12 20:04:59] MODEL EVALUATION: Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.58      0.61      0.59      2120
+           1       0.55      0.52      0.53      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.56      0.56      0.56      4057
+weighted avg       0.56      0.57      0.56      4057
+
+[2025-04-12 20:05:00] MODEL EVALUATION: Evaluated 3 classification models
+[2025-04-12 20:05:00] MODEL EVALUATION: Comparing regression and classification approaches
+[2025-04-12 20:05:00] MODEL EVALUATION: Best model by F1 score: logistic_regression (Classification) with F1 = 0.5368
+[2025-04-12 20:05:00] MODEL EVALUATION: Best model by ROC AUC: gradient_boosting (Regression) with AUC = 0.5960
+[2025-04-12 20:05:02] MODEL EVALUATION: Comparison results saved to F:\0-PROJETO-MACHINE-COPILOT\models\evaluation\model_comparison_results.csv
+[2025-04-12 20:05:02] MODEL EVALUATION: Completed comparison of regression and classification approaches
+[2025-04-12 20:05:02] MODEL EVALUATION: Model evaluation pipeline completed successfully
+[2025-04-12 20:05:02] PIPELINE: Completed pipeline component: evaluate, result: True
+[2025-04-12 20:05:02] PIPELINE: Component evaluate completed successfully
+[2025-04-12 20:05:02] PIPELINE: Starting component: deploy
+[2025-04-12 20:05:02] PIPELINE: Running pipeline component: deploy
+[2025-04-12 20:05:02] DEPLOYMENT: Starting deployment pipeline
+[2025-04-12 20:05:02] DEPLOYMENT: Finding best model from evaluation results
+[2025-04-12 20:05:02] DEPLOYMENT: Best model identified: logistic_regression (Classification)
+[2025-04-12 20:05:02] DEPLOYMENT: Deploying logistic_regression to MLflow
+[2025-04-12 20:05:07] DEPLOYMENT: Model deployed to MLflow with URI: runs:/dc862fa979ee451aa14f2b923df1e5e2/deployed_classification_model
+[2025-04-12 20:05:07] DEPLOYMENT: Registered model name: kobe_shot_predictor_20250412200502
+[2025-04-12 20:05:07] DEPLOYMENT: Model info saved to F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 20:05:07] DEPLOYMENT: Creating Streamlit application
+[2025-04-12 20:05:07] DEPLOYMENT: Streamlit app created at F:\0-PROJETO-MACHINE-COPILOT\app\kobe_shot_predictor_app.py
+[2025-04-12 20:05:07] DEPLOYMENT: Created app README.md file at F:\0-PROJETO-MACHINE-COPILOT\app\README.md
+[2025-04-12 20:05:07] DEPLOYMENT: Deployment pipeline completed successfully
+[2025-04-12 20:05:07] DEPLOYMENT: To run the Streamlit app, execute: streamlit run app/kobe_shot_predictor_app.py
+[2025-04-12 20:05:07] PIPELINE: Completed pipeline component: deploy, result: True
+[2025-04-12 20:05:07] PIPELINE: Component deploy completed successfully
+[2025-04-12 20:05:07] PIPELINE: Full pipeline completed successfully
+[2025-04-12 20:05:07] PIPELINE: To run the Streamlit app, execute: streamlit run app/kobe_shot_predictor_app.py
+[2025-04-12 20:08:59] PIPELINE: Initializing MLflow experiment
+[2025-04-12 20:08:59] PIPELINE: Using existing experiment: kobe_shot_prediction
+[2025-04-12 20:08:59] PIPELINE: Starting full pipeline execution
+[2025-04-12 20:08:59] PIPELINE: Initializing MLflow experiment
+[2025-04-12 20:08:59] PIPELINE: Using existing experiment: kobe_shot_prediction
+[2025-04-12 20:08:59] PIPELINE: Using experiment ID: 536417645950866813
+[2025-04-12 20:09:00] PIPELINE: Starting component: data_processing
+[2025-04-12 20:09:00] PIPELINE: Running pipeline component: data_processing
+[2025-04-12 20:09:01] DATA PROCESSING: Starting data processing pipeline
+[2025-04-12 20:09:01] DATA PROCESSING: Project root directory: F:\0-PROJETO-MACHINE-COPILOT
+[2025-04-12 20:09:01] DATA PROCESSING: Processing development dataset
+[2025-04-12 20:09:01] DATA PROCESSING: Reading data from: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_dev.parquet
+[2025-04-12 20:09:01] DATA PROCESSING: Loading data from F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_dev.parquet
+[2025-04-12 20:09:01] DATA PROCESSING: Original development data shape: (24271, 25)
+[2025-04-12 20:09:01] DATA PROCESSING: Filtering data to include only specified columns
+[2025-04-12 20:09:01] DATA PROCESSING: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 20:09:01] DATA PROCESSING: Initial filtered data shape: (24271, 7)
+[2025-04-12 20:09:01] DATA PROCESSING: Data shape after removing missing values: (20285, 7)
+[2025-04-12 20:09:01] DATA PROCESSING: Filtered development data dimension: 20285 rows, 7 columns
+[2025-04-12 20:09:01] DATA PROCESSING: Saving filtered data to: F:\0-PROJETO-MACHINE-COPILOT\data\processed\data_filtered.parquet
+[2025-04-12 20:09:01] DATA PROCESSING: Splitting data with test_size=0.2 using stratified sampling
+[2025-04-12 20:09:01] DATA PROCESSING: Training set shape: (16228, 7), Testing set shape: (4057, 7)
+[2025-04-12 20:09:01] DATA PROCESSING: Saving training data to: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 20:09:01] DATA PROCESSING: Saving test data to: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:09:01] DATA PROCESSING: Development data processed and saved
+[2025-04-12 20:09:01] DATA PROCESSING: Loading production dataset
+[2025-04-12 20:09:01] DATA PROCESSING: Reading data from: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 20:09:01] DATA PROCESSING: Loading data from F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 20:09:02] DATA PROCESSING: Production data shape: (6426, 25)
+[2025-04-12 20:09:02] DATA PROCESSING: Data processing pipeline completed successfully
+[2025-04-12 20:09:02] PIPELINE: Completed pipeline component: data_processing, result: True
+[2025-04-12 20:09:02] PIPELINE: Component data_processing completed successfully
+[2025-04-12 20:09:02] PIPELINE: Starting component: train_regression
+[2025-04-12 20:09:02] PIPELINE: Running pipeline component: train_regression
+[2025-04-12 20:09:02] REGRESSION TRAINING: Starting regression model training pipeline
+[2025-04-12 20:09:02] REGRESSION TRAINING: Project root directory: F:\0-PROJETO-MACHINE-COPILOT
+[2025-04-12 20:09:02] REGRESSION TRAINING: Loading training data
+[2025-04-12 20:09:02] REGRESSION TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 20:09:02] REGRESSION TRAINING: Loading test data for evaluation
+[2025-04-12 20:09:02] REGRESSION TRAINING: Loading test data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:09:02] REGRESSION TRAINING: Preparing features and target variable
+[2025-04-12 20:09:02] REGRESSION TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 20:09:02] REGRESSION TRAINING: Preparing features and target variable
+[2025-04-12 20:09:02] REGRESSION TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 20:09:02] REGRESSION TRAINING: Training Linear Regression model
+[2025-04-12 20:09:02] REGRESSION TRAINING: Linear Regression model trained successfully
+[2025-04-12 20:09:02] REGRESSION TRAINING: Evaluating LinearRegression model
+[2025-04-12 20:09:02] REGRESSION TRAINING: MSE: 0.2426, RMSE: 0.4925, MAE: 0.4844, R²: 0.0276
+[2025-04-12 20:09:02] REGRESSION TRAINING: Training ElasticNet model with hyperparameter tuning
+[2025-04-12 20:09:06] REGRESSION TRAINING: ElasticNet best parameters: {'alpha': 0.1, 'l1_ratio': 0.1}
+[2025-04-12 20:09:06] REGRESSION TRAINING: ElasticNet model trained successfully
+[2025-04-12 20:09:06] REGRESSION TRAINING: Evaluating ElasticNet model
+[2025-04-12 20:09:06] REGRESSION TRAINING: MSE: 0.2428, RMSE: 0.4928, MAE: 0.4852, R²: 0.0268
+[2025-04-12 20:09:06] REGRESSION TRAINING: Training Random Forest model
+[2025-04-12 20:09:11] REGRESSION TRAINING: Random Forest model trained successfully
+[2025-04-12 20:09:11] REGRESSION TRAINING: Evaluating RandomForestRegressor model
+[2025-04-12 20:09:11] REGRESSION TRAINING: MSE: 0.2641, RMSE: 0.5139, MAE: 0.4803, R²: -0.0584
+[2025-04-12 20:09:11] REGRESSION TRAINING: Training Gradient Boosting model
+[2025-04-12 20:09:12] REGRESSION TRAINING: Gradient Boosting model trained successfully
+[2025-04-12 20:09:12] REGRESSION TRAINING: Evaluating GradientBoostingRegressor model
+[2025-04-12 20:09:12] REGRESSION TRAINING: MSE: 0.2404, RMSE: 0.4903, MAE: 0.4793, R²: 0.0366
+[2025-04-12 20:09:12] REGRESSION TRAINING: Saving linear_regression model
+[2025-04-12 20:09:12] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 20:09:21] REGRESSION TRAINING: Model linear_regression registered with MLflow
+[2025-04-12 20:09:21] REGRESSION TRAINING: Saving elastic_net model
+[2025-04-12 20:09:21] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 20:09:26] REGRESSION TRAINING: Model elastic_net registered with MLflow
+[2025-04-12 20:09:26] REGRESSION TRAINING: Saving random_forest model
+[2025-04-12 20:09:26] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 20:09:31] REGRESSION TRAINING: Model random_forest registered with MLflow
+[2025-04-12 20:09:31] REGRESSION TRAINING: Saving gradient_boosting model
+[2025-04-12 20:09:31] REGRESSION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 20:09:37] REGRESSION TRAINING: Model gradient_boosting registered with MLflow
+[2025-04-12 20:09:37] REGRESSION TRAINING: Best regression model: gradient_boosting with R² = 0.0366
+[2025-04-12 20:09:37] REGRESSION TRAINING: Regression model training pipeline completed successfully
+[2025-04-12 20:09:37] PIPELINE: Completed pipeline component: train_regression, result: True
+[2025-04-12 20:09:37] PIPELINE: Component train_regression completed successfully
+[2025-04-12 20:09:37] PIPELINE: Starting component: train_classification
+[2025-04-12 20:09:37] PIPELINE: Running pipeline component: train_classification
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Starting classification model training pipeline
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Loading training and testing data
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Loading testing data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Training data shape: (16228, 7), Testing data shape: (4057, 7)
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Preparing features and target variable
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Preparing features and target variable
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Training Logistic Regression model
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Logistic Regression model trained successfully
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Logistic Regression Log Loss: 0.6793
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Logistic Regression F1 Score: 0.5368
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.61      0.59      2120
+         1.0       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Saving logistic_regression model
+[2025-04-12 20:09:37] CLASSIFICATION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Model logistic_regression registered with MLflow
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Training Decision Tree model
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Decision Tree model trained successfully
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Decision Tree Log Loss: 0.6829
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Decision Tree F1 Score: 0.4556
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.82      0.68      2120
+         1.0       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Saving decision_tree model
+[2025-04-12 20:09:42] CLASSIFICATION TRAINING: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 20:09:48] CLASSIFICATION TRAINING: Model decision_tree registered with MLflow
+[2025-04-12 20:09:48] CLASSIFICATION TRAINING: Logistic Regression model selected as the best model (lower log loss)
+[2025-04-12 20:09:48] CLASSIFICATION TRAINING: Classification model training pipeline completed successfully
+[2025-04-12 20:09:48] PIPELINE: Completed pipeline component: train_classification, result: True
+[2025-04-12 20:09:48] PIPELINE: Component train_classification completed successfully
+[2025-04-12 20:09:48] PIPELINE: Starting component: evaluate
+[2025-04-12 20:09:48] PIPELINE: Running pipeline component: evaluate
+[2025-04-12 20:09:49] MODEL EVALUATION: Starting model evaluation pipeline
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading test data
+[2025-04-12 20:09:49] MODEL EVALUATION: Reading test data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 20:09:49] MODEL EVALUATION: Preparing features and target variable
+[2025-04-12 20:09:49] MODEL EVALUATION: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading trained models
+[2025-04-12 20:09:49] MODEL EVALUATION: Looking for regression models in: F:\0-PROJETO-MACHINE-COPILOT\models\regression
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading regression model: elastic_net from F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading regression model: gradient_boosting from F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading regression model: linear_regression from F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading regression model: random_forest from F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 20:09:49] MODEL EVALUATION: Looking for classification models in: F:\0-PROJETO-MACHINE-COPILOT\models\classification
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading classification model: decision_tree from F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading classification model: logistic_regression from F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 20:09:49] MODEL EVALUATION: Loading classification model: random_forest from F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 20:09:49] MODEL EVALUATION: Loaded 4 regression models and 3 classification models
+[2025-04-12 20:09:49] MODEL EVALUATION: Evaluating regression models
+[2025-04-12 20:09:49] MODEL EVALUATION: Evaluating regression model: elastic_net
+[2025-04-12 20:09:49] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:49] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:49] MODEL EVALUATION: Regression Metrics - MSE: 0.2428, RMSE: 0.4928, R²: 0.0268
+[2025-04-12 20:09:49] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5726, Precision: 0.5625, Recall: 0.4713, F1: 0.5129, AUC: 0.5908
+[2025-04-12 20:09:49] MODEL EVALUATION: Confusion Matrix:
+[[1410  710]
+ [1024  913]]
+[2025-04-12 20:09:50] MODEL EVALUATION: Evaluating regression model: gradient_boosting
+[2025-04-12 20:09:50] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:50] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:50] MODEL EVALUATION: Regression Metrics - MSE: 0.2404, RMSE: 0.4903, R²: 0.0366
+[2025-04-12 20:09:50] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5913, Precision: 0.6175, Recall: 0.3784, F1: 0.4693, AUC: 0.5960
+[2025-04-12 20:09:50] MODEL EVALUATION: Confusion Matrix:
+[[1666  454]
+ [1204  733]]
+[2025-04-12 20:09:51] MODEL EVALUATION: Evaluating regression model: linear_regression
+[2025-04-12 20:09:51] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:51] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:51] MODEL EVALUATION: Regression Metrics - MSE: 0.2426, RMSE: 0.4925, R²: 0.0276
+[2025-04-12 20:09:51] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5709, Precision: 0.5600, Recall: 0.4724, F1: 0.5125, AUC: 0.5955
+[2025-04-12 20:09:51] MODEL EVALUATION: Confusion Matrix:
+[[1401  719]
+ [1022  915]]
+[2025-04-12 20:09:52] MODEL EVALUATION: Evaluating regression model: random_forest
+[2025-04-12 20:09:52] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:52] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:52] MODEL EVALUATION: Regression Metrics - MSE: 0.2641, RMSE: 0.5139, R²: -0.0584
+[2025-04-12 20:09:52] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5484, Precision: 0.5270, Recall: 0.5281, F1: 0.5276, AUC: 0.5621
+[2025-04-12 20:09:52] MODEL EVALUATION: Confusion Matrix:
+[[1202  918]
+ [ 914 1023]]
+[2025-04-12 20:09:53] MODEL EVALUATION: Evaluated 4 regression models
+[2025-04-12 20:09:53] MODEL EVALUATION: Evaluating classification models
+[2025-04-12 20:09:53] MODEL EVALUATION: Evaluating classification model: decision_tree
+[2025-04-12 20:09:53] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:53] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:53] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5982, Precision: 0.6452, Recall: 0.3521, F1: 0.4556
+[2025-04-12 20:09:53] MODEL EVALUATION: AUC: 0.5943
+[2025-04-12 20:09:53] MODEL EVALUATION: Confusion Matrix:
+[[1745  375]
+ [1255  682]]
+[2025-04-12 20:09:53] MODEL EVALUATION: Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.58      0.82      0.68      2120
+           1       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 20:09:54] MODEL EVALUATION: Evaluating classification model: logistic_regression
+[2025-04-12 20:09:54] MODEL EVALUATION: Feature names esperadas pelo modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:54] MODEL EVALUATION: Colunas reordenadas para avaliação: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:09:54] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5674, Precision: 0.5491, Recall: 0.5250, F1: 0.5368
+[2025-04-12 20:09:54] MODEL EVALUATION: AUC: 0.5945
+[2025-04-12 20:09:54] MODEL EVALUATION: Confusion Matrix:
+[[1285  835]
+ [ 920 1017]]
+[2025-04-12 20:09:54] MODEL EVALUATION: Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.58      0.61      0.59      2120
+           1       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 20:09:55] MODEL EVALUATION: Evaluating classification model: random_forest
+[2025-04-12 20:09:55] MODEL EVALUATION: Feature names esperadas pelo modelo: ['playoffs', 'minutes_remaining', 'period', 'shot_distance', 'lat', 'lon']
+[2025-04-12 20:09:55] MODEL EVALUATION: Colunas reordenadas para avaliação: ['playoffs', 'minutes_remaining', 'period', 'shot_distance', 'lat', 'lon']
+[2025-04-12 20:09:56] MODEL EVALUATION: Classification Metrics - Accuracy: 0.5657, Precision: 0.5477, Recall: 0.5188, F1: 0.5329
+[2025-04-12 20:09:56] MODEL EVALUATION: AUC: 0.5699
+[2025-04-12 20:09:56] MODEL EVALUATION: Confusion Matrix:
+[[1290  830]
+ [ 932 1005]]
+[2025-04-12 20:09:56] MODEL EVALUATION: Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.58      0.61      0.59      2120
+           1       0.55      0.52      0.53      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.56      0.56      0.56      4057
+weighted avg       0.56      0.57      0.56      4057
+
+[2025-04-12 20:09:57] MODEL EVALUATION: Evaluated 3 classification models
+[2025-04-12 20:09:57] MODEL EVALUATION: Comparing regression and classification approaches
+[2025-04-12 20:09:57] MODEL EVALUATION: Best model by F1 score: logistic_regression (Classification) with F1 = 0.5368
+[2025-04-12 20:09:57] MODEL EVALUATION: Best model by ROC AUC: gradient_boosting (Regression) with AUC = 0.5960
+[2025-04-12 20:09:58] MODEL EVALUATION: Comparison results saved to F:\0-PROJETO-MACHINE-COPILOT\models\evaluation\model_comparison_results.csv
+[2025-04-12 20:09:58] MODEL EVALUATION: Completed comparison of regression and classification approaches
+[2025-04-12 20:09:58] MODEL EVALUATION: Model evaluation pipeline completed successfully
+[2025-04-12 20:09:58] PIPELINE: Completed pipeline component: evaluate, result: True
+[2025-04-12 20:09:58] PIPELINE: Component evaluate completed successfully
+[2025-04-12 20:09:58] PIPELINE: Starting component: deploy
+[2025-04-12 20:09:58] PIPELINE: Running pipeline component: deploy
+[2025-04-12 20:09:58] DEPLOYMENT: Starting deployment pipeline
+[2025-04-12 20:09:58] DEPLOYMENT: Finding best model from evaluation results
+[2025-04-12 20:09:58] DEPLOYMENT: Best model identified: logistic_regression (Classification)
+[2025-04-12 20:09:58] DEPLOYMENT: Deploying logistic_regression to MLflow
+[2025-04-12 20:10:03] DEPLOYMENT: Model deployed to MLflow with URI: runs:/1f2b23fc7272436db8de24a58d1aaeb3/deployed_classification_model
+[2025-04-12 20:10:03] DEPLOYMENT: Registered model name: kobe_shot_predictor_20250412200958
+[2025-04-12 20:10:03] DEPLOYMENT: Model info saved to F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 20:10:03] DEPLOYMENT: Creating Streamlit application
+[2025-04-12 20:10:03] DEPLOYMENT: Streamlit app created at F:\0-PROJETO-MACHINE-COPILOT\app\kobe_shot_predictor_app.py
+[2025-04-12 20:10:03] DEPLOYMENT: Created app README.md file at F:\0-PROJETO-MACHINE-COPILOT\app\README.md
+[2025-04-12 20:10:03] DEPLOYMENT: Deployment pipeline completed successfully
+[2025-04-12 20:10:03] DEPLOYMENT: To run the Streamlit app, execute: streamlit run app/kobe_shot_predictor_app.py
+[2025-04-12 20:10:03] PIPELINE: Completed pipeline component: deploy, result: True
+[2025-04-12 20:10:03] PIPELINE: Component deploy completed successfully
+[2025-04-12 20:10:03] PIPELINE: Full pipeline completed successfully
+[2025-04-12 20:10:03] PIPELINE: To run the Streamlit app, execute: streamlit run app/kobe_shot_predictor_app.py

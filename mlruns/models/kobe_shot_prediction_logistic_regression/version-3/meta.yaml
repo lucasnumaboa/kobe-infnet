@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744503306897
+current_stage: None
+description: null
+last_updated_timestamp: 1744503306897
+name: kobe_shot_prediction_logistic_regression
+run_id: 37ef765bc46f4ef3956987167bf001d5
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/37ef765bc46f4ef3956987167bf001d5/artifacts/models/logistic_regression
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/37ef765bc46f4ef3956987167bf001d5/artifacts/models/logistic_regression
+user_id: null
+version: 3

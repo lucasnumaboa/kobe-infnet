@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/25100fc13bbd4435b3595bbb06141bfc/artifacts
+end_time: 1744503376699
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 25100fc13bbd4435b3595bbb06141bfc
+run_name: PipelineAplicacao
+run_uuid: 25100fc13bbd4435b3595bbb06141bfc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744503376284
+status: 3
+tags: []
+user_id: PC2

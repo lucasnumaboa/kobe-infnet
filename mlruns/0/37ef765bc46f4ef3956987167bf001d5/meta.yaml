@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/37ef765bc46f4ef3956987167bf001d5/artifacts
+end_time: 1744503306922
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 37ef765bc46f4ef3956987167bf001d5
+run_name: classification_logistic_regression
+run_uuid: 37ef765bc46f4ef3956987167bf001d5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744503298609
+status: 3
+tags: []
+user_id: PC2

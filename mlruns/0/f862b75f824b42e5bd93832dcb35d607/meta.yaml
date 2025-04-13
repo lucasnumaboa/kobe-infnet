@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/f862b75f824b42e5bd93832dcb35d607/artifacts
+end_time: 1744503246198
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f862b75f824b42e5bd93832dcb35d607
+run_name: classification_training
+run_uuid: f862b75f824b42e5bd93832dcb35d607
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744503225414
+status: 3
+tags: []
+user_id: PC2

@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/949a5b1e5021490a957bcf1b520a502a/artifacts
+end_time: 1744503251906
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 949a5b1e5021490a957bcf1b520a502a
+run_name: regression_linear_regression
+run_uuid: 949a5b1e5021490a957bcf1b520a502a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744503246281
+status: 3
+tags: []
+user_id: PC2

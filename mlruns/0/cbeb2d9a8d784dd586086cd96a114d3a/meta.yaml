@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/cbeb2d9a8d784dd586086cd96a114d3a/artifacts
+end_time: 1744503054840
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cbeb2d9a8d784dd586086cd96a114d3a
+run_name: regression_gradient_boosting
+run_uuid: cbeb2d9a8d784dd586086cd96a114d3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744503049826
+status: 3
+tags: []
+user_id: PC2

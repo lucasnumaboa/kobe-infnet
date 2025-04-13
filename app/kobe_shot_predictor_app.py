@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -12,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 
 # Set page title and layout
 st.set_page_config(
-    page_title="Preditor de Arremessos do Kobe Bryant",
+    page_title="Kobe Bryant Shot Predictor",
     layout="wide"
 )
 
@@ -33,7 +34,7 @@ def load_model_info():
             model_info = yaml.safe_load(f)
         return model_info
     except Exception as e:
-        st.error(f"Erro ao carregar informações do modelo: {e}")
+        st.error(f"Error loading model info: {e}")
         return None
 
 @st.cache_resource
@@ -49,7 +50,7 @@ def load_model(model_info):
             model = joblib.load(model_path)
         return model
     except Exception as e:
-        st.error(f"Erro ao carregar modelo: {e}")
+        st.error(f"Error loading model: {e}")
         return None
 
 # Load sample data for reference
@@ -61,47 +62,47 @@ def load_sample_data():
         df = pd.read_parquet(data_path)
         return df
     except Exception as e:
-        st.error(f"Erro ao carregar dados de exemplo: {e}")
+        st.error(f"Error loading sample data: {e}")
         return None
 
 # Main title
-st.title("Preditor de Arremessos do Kobe Bryant")
+st.title("Kobe Bryant Shot Predictor")
 
 # Sidebar
-st.sidebar.title("Sobre")
-st.sidebar.info("Este aplicativo prevê se o Kobe Bryant acertaria ou erraria um arremesso de basquete com base em diversas características.")
+st.sidebar.title("About")
+st.sidebar.info("This app predicts whether Kobe Bryant would make or miss a basketball shot based on various features.")
 
 # Load model info and model
 model_info = load_model_info()
 if model_info:
     model = load_model(model_info)
-    st.sidebar.success(f"Modelo {model_info['model_type']} carregado: {model_info['model_name']}")
+    st.sidebar.success(f"Loaded {model_info['model_type']} model: {model_info['model_name']}")
     
     # Display model info
-    st.sidebar.subheader("Informações do Modelo")
-    st.sidebar.write(f"**Tipo de Modelo:** {model_info['model_type']}")
-    st.sidebar.write(f"**Nome do Modelo:** {model_info['model_name']}")
-    st.sidebar.write(f"**Implantado em:** {model_info['timestamp']}")
+    st.sidebar.subheader("Model Information")
+    st.sidebar.write(f"**Model Type:** {model_info['model_type']}")
+    st.sidebar.write(f"**Model Name:** {model_info['model_name']}")
+    st.sidebar.write(f"**Deployed on:** {model_info['timestamp']}")
 else:
-    st.sidebar.error("Nenhuma informação de modelo encontrada. Por favor, execute o pipeline de implantação primeiro.")
+    st.sidebar.error("No model information found. Please run the deployment pipeline first.")
     model = None
 
 # Load sample data
 sample_data = load_sample_data()
 
 # Main content
-tabs = st.tabs(["Preditor", "Desempenho do Modelo", "Dados de Exemplo"])
+tabs = st.tabs(["Predictor", "Model Performance", "Sample Data"])
 
 with tabs[0]:
-    st.header("Prever Resultado do Arremesso")
+    st.header("Predict Shot Outcome")
     
     if model:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.subheader("Detalhes do Arremesso")
+            st.subheader("Shot Details")
             action_type = st.selectbox(
-                "Tipo de Ação",
+                "Action Type",
                 options=[
                     "Jump Shot",
                     "Layup",
@@ -112,32 +113,32 @@ with tabs[0]:
             )
             
             shot_type = st.selectbox(
-                "Tipo de Arremesso",
-                options=["Lance de 2 Pontos", "Lance de 3 Pontos"]
+                "Shot Type",
+                options=["2PT Field Goal", "3PT Field Goal"]
             )
             
             shot_zone_basic = st.selectbox(
-                "Zona Básica de Arremesso",
+                "Shot Zone Basic",
                 options=[
-                    "Acima do Intervalo 3",
-                    "Canto Esquerdo 3",
-                    "Média Distância",
-                    "Área Restrita",
-                    "Canto Direito 3",
-                    "Na Pintura (Não-RA)"
+                    "Above the Break 3",
+                    "Left Corner 3",
+                    "Mid-Range",
+                    "Restricted Area",
+                    "Right Corner 3",
+                    "In The Paint (Non-RA)"
                 ]
             )
         
         with col2:
-            st.subheader("Contexto do Jogo")
-            period = st.slider("Período (Quarto)", 1, 4, 2)
-            minutes_remaining = st.slider("Minutos Restantes", 0, 12, 6)
-            seconds_remaining = st.slider("Segundos Restantes", 0, 59, 30)
-            shot_distance = st.slider("Distância do Arremesso (pés)", 0, 40, 15)
+            st.subheader("Game Context")
+            period = st.slider("Period (Quarter)", 1, 4, 2)
+            minutes_remaining = st.slider("Minutes Remaining", 0, 12, 6)
+            seconds_remaining = st.slider("Seconds Remaining", 0, 59, 30)
+            shot_distance = st.slider("Shot Distance (feet)", 0, 40, 15)
             playoffs = st.checkbox("Playoffs")
             
         # Make prediction button
-        if st.button("Prever Resultado"):
+        if st.button("Predict Shot Outcome"):
             # Create features based on inputs
             # Note: This is a simplified example - in a real app, we'd need to
             # match the exact feature engineering done during training
@@ -154,33 +155,33 @@ with tabs[0]:
             
             # For a real app, we'd need to one-hot encode categorical variables 
             # exactly as was done during training
-            st.info("Em um aplicativo de produção, isso realizaria exatamente o mesmo pré-processamento de features que o pipeline de treinamento.")
+            st.info("In a production app, this would perform the exact same feature engineering as the training pipeline.")
             
             # Simulate prediction (replace with actual prediction code that handles feature preprocessing)
             try:
                 if model_info["model_type"] == "Regression":
                     result_value = np.random.random()  # Placeholder
                     shot_made = result_value > 0.5
-                    st.write(f"**Probabilidade de Acerto**: {result_value:.1%}")
+                    st.write(f"**Shot Probability**: {result_value:.1%}")
                 else:  # Classification
                     shot_made = np.random.choice([True, False])  # Placeholder
                 
                 # Display prediction
                 if shot_made:
-                    st.success("**Previsão: ARREMESSO CONVERTIDO!**")
+                    st.success("**Prediction: MADE SHOT!**")
                 else:
-                    st.error("**Previsão: ARREMESSO ERRADO**")
+                    st.error("**Prediction: MISSED SHOT**")
                 
                 # Show a Kobe image
-                st.image("https://media.giphy.com/media/l0MYwdebx8o0XI56E/giphy.gif", width=400, caption="Black Mamba")
+                st.image("https://media.giphy.com/media/l0MYwdebx8o0XI56E/giphy.gif", width=400, caption="The Black Mamba")
             
             except Exception as e:
-                st.error(f"Erro ao fazer previsão: {e}")
+                st.error(f"Error making prediction: {e}")
     else:
-        st.warning("Modelo não carregado. Por favor, execute o pipeline de implantação primeiro.")
+        st.warning("Model not loaded. Please run the deployment pipeline first.")
 
 with tabs[1]:
-    st.header("Desempenho do Modelo")
+    st.header("Model Performance")
     
     project_root = get_project_root()
     eval_path = os.path.join(project_root, "models", "evaluation")
@@ -189,17 +190,17 @@ with tabs[1]:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.subheader("Comparação de Modelos")
+            st.subheader("Model Comparison")
             f1_comparison_path = os.path.join(eval_path, "f1_score_comparison.png")
             if os.path.exists(f1_comparison_path):
-                st.image(f1_comparison_path, caption="Comparação de F1 Score")
+                st.image(f1_comparison_path, caption="F1 Score Comparison")
             
             auc_comparison_path = os.path.join(eval_path, "auc_comparison.png")
             if os.path.exists(auc_comparison_path):
-                st.image(auc_comparison_path, caption="Comparação de AUC")
+                st.image(auc_comparison_path, caption="AUC Comparison")
         
         with col2:
-            st.subheader("Desempenho do Melhor Modelo")
+            st.subheader("Best Model Performance")
             if model_info:
                 model_name = model_info["model_name"]
                 model_type = model_info["model_type"]
@@ -213,33 +214,33 @@ with tabs[1]:
                     roc_path = os.path.join(eval_path, f"{model_name}_class_roc_curve.png")
                 
                 if os.path.exists(cm_path):
-                    st.image(cm_path, caption=f"Matriz de Confusão - {model_name}")
+                    st.image(cm_path, caption=f"Confusion Matrix - {model_name}")
                 
                 if os.path.exists(roc_path):
-                    st.image(roc_path, caption=f"Curva ROC - {model_name}")
+                    st.image(roc_path, caption=f"ROC Curve - {model_name}")
     else:
-        st.warning("Resultados de avaliação do modelo não encontrados. Por favor, execute o pipeline de avaliação primeiro.")
+        st.warning("Model evaluation results not found. Please run the evaluation pipeline first.")
 
 with tabs[2]:
-    st.header("Dados de Exemplo")
+    st.header("Sample Data")
     
     if sample_data is not None:
-        st.write(f"Formato dos dados de exemplo: {sample_data.shape}")
+        st.write(f"Sample data shape: {sample_data.shape}")
         st.dataframe(sample_data.head(100))
         
         # Plot shot distribution
-        st.subheader("Distribuição de Arremessos")
+        st.subheader("Shot Distribution")
         
         if 'shot_made_flag' in sample_data.columns:
             fig, ax = plt.subplots(figsize=(10, 6))
             sns.countplot(x='shot_made_flag', data=sample_data, ax=ax)
-            ax.set_xlabel("Arremesso Convertido (1) vs Errado (0)")
-            ax.set_ylabel("Contagem")
-            ax.set_title("Distribuição de Arremessos Convertidos vs Errados")
+            ax.set_xlabel("Shot Made (1) vs Missed (0)")
+            ax.set_ylabel("Count")
+            ax.set_title("Distribution of Made vs Missed Shots")
             st.pyplot(fig)
     else:
-        st.warning("Dados de exemplo não carregados.")
+        st.warning("Sample data not loaded.")
 
 # Add footer
 st.markdown("---")
-st.markdown("Projeto de Previsão de Arremessos do Kobe Bryant usando MLflow | Criado com Streamlit")
+st.markdown("Kobe Bryant Shot Prediction Project using MLflow | Created with Streamlit")

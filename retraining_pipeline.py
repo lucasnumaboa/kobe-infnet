@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """
 Pipeline de retreinamento para o projeto de previsão de arremessos do Kobe Bryant.
 Este módulo implementa o retreinamento incremental do modelo usando os dados de produção.
@@ -440,9 +440,7 @@ if __name__ == "__main__":
         
         # Executar pipeline de retreinamento
         retrain_model(production_data)
-    except Exception as e:
-=======
-"""
+    except Exception as e:"""
 Pipeline de retreinamento para o projeto de previsão de arremessos do Kobe Bryant.
 Este módulo implementa o retreinamento incremental do modelo usando os dados de produção.
 """
@@ -884,5 +882,4 @@ if __name__ == "__main__":
         # Executar pipeline de retreinamento
         retrain_model(production_data)
     except Exception as e:
->>>>>>> d0823a4e4905179308670712f2d491172a3d22dd
         log_step(f"Erro no teste de pipeline: {str(e)}")

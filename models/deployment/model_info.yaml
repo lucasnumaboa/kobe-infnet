@@ -1,5 +1,7 @@
-model_name: logistic_regression
+metrics:
+  auc: 0.784144268542457
+  f1_score: 0.640990990990991
+  log_loss: 0.5607890243359818
+model_name: random_forest
 model_type: Classification
-model_uri: runs:/9f118ec3a205475797c805ed14c8953b/deployed_classification_model
-registered_model_name: kobe_shot_predictor_20250412192124
-timestamp: '20250412192124'
+timestamp: '2025-04-12 21:18:54'

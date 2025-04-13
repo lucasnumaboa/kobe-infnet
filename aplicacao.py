@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Pipeline de aplicação para o projeto de previsão de arremessos do Kobe Bryant.
 Este módulo carrega o modelo treinado, aplica-o aos dados de produção e registra métricas.
@@ -783,13 +782,11 @@ def main():
 
 if __name__ == "__main__":
     # Iniciar run do MLflow para rastreamento com o nome especificado
-    with mlflow.start_run(run_name="PipelineAplicacao"):
-=======
+    with mlflow.start_run(run_name="PipelineAplicacao"): ''''''
 """
 Pipeline de aplicação para o projeto de previsão de arremessos do Kobe Bryant.
 Este módulo carrega o modelo treinado, aplica-o aos dados de produção e registra métricas.
 """
-
 import os
 import pandas as pd
 import mlflow
@@ -1570,5 +1567,4 @@ def main():
 if __name__ == "__main__":
     # Iniciar run do MLflow para rastreamento com o nome especificado
     with mlflow.start_run(run_name="PipelineAplicacao"):
->>>>>>> d0823a4e4905179308670712f2d491172a3d22dd
         main()

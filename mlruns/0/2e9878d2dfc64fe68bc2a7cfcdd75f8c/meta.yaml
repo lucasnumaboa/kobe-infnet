@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/2e9878d2dfc64fe68bc2a7cfcdd75f8c/artifacts
+end_time: 1744503042691
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2e9878d2dfc64fe68bc2a7cfcdd75f8c
+run_name: regression_elastic_net
+run_uuid: 2e9878d2dfc64fe68bc2a7cfcdd75f8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744503037737
+status: 3
+tags: []
+user_id: PC2

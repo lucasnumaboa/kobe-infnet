@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744499388015
+current_stage: None
+description: null
+last_updated_timestamp: 1744499388015
+name: kobe_shot_prediction_decision_tree
+run_id: 13d7a5a80d4d4e63a432234a8cdaf07d
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/13d7a5a80d4d4e63a432234a8cdaf07d/artifacts/models/decision_tree
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/src/kobe_prediction/mlruns/536417645950866813/13d7a5a80d4d4e63a432234a8cdaf07d/artifacts/models/decision_tree
+user_id: null
+version: 32

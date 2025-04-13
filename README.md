@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Kobe Bryant Shot Prediction Project
 
 Este projeto implementa um sistema completo de machine learning para prever se um arremesso do Kobe Bryant será convertido em cesta ou não, baseado em diversas características como localização do arremesso, tempo restante, período do jogo e outros fatores contextuais. O sistema utiliza duas abordagens (classificação e regressão) para determinar qual método oferece melhor desempenho preditivo.
@@ -303,8 +303,8 @@ Durante o ciclo de vida do projeto, vários artefatos são gerados:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/lucasnumaboa/kobe-prediction.git
-   cd kobe-prediction
+   git clone https://github.com/lucasnumaboa/kobe-infnet.git
+   cd kobe-infnet
    ```
 
 2. Instale as dependências:
@@ -315,7 +315,7 @@ Durante o ciclo de vida do projeto, vários artefatos são gerados:
    Ou crie um ambiente conda:
    ```bash
    conda env create -f conda.yaml
-   conda activate kobe-prediction
+   conda activate kobe-infnet
    ```
 
 3. Certifique-se de que os dados estão no diretório correto:
@@ -392,7 +392,7 @@ O pipeline unificado de treinamento/retreinamento representa uma solução robus
 3. A necessidade de detectar e tratar dados duplicados para evitar viés no retreinamento
 4. A importância de manter a ordem das features consistente em todas as fases do pipeline
 ````
-=======
+
 # Kobe Bryant Shot Prediction Project
 
 Este projeto implementa um sistema completo de machine learning para prever se um arremesso do Kobe Bryant será convertido em cesta ou não, baseado em diversas características como localização do arremesso, tempo restante, período do jogo e outros fatores contextuais. O sistema utiliza duas abordagens (classificação e regressão) para determinar qual método oferece melhor desempenho preditivo.
@@ -698,7 +698,7 @@ Durante o ciclo de vida do projeto, vários artefatos são gerados:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/lucasnumaboa/kobe-kedro-infnet.git
-   cd kobe-prediction
+   cd kobe-infnet
    ```
 
 2. Instale as dependências:
@@ -709,7 +709,7 @@ Durante o ciclo de vida do projeto, vários artefatos são gerados:
    Ou crie um ambiente conda:
    ```bash
    conda env create -f conda.yaml
-   conda activate kobe-prediction
+   conda activate kobe-infnet
    ```
 
 3. Certifique-se de que os dados estão no diretório correto:
@@ -786,4 +786,3 @@ O pipeline unificado de treinamento/retreinamento representa uma solução robus
 3. A necessidade de detectar e tratar dados duplicados para evitar viés no retreinamento
 4. A importância de manter a ordem das features consistente em todas as fases do pipeline
 ````
->>>>>>> d0823a4e4905179308670712f2d491172a3d22dd

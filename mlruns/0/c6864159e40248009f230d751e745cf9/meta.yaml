@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/c6864159e40248009f230d751e745cf9/artifacts
+end_time: 1744502768605
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c6864159e40248009f230d751e745cf9
+run_name: unified_model_training
+run_uuid: c6864159e40248009f230d751e745cf9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744502768494
+status: 4
+tags: []
+user_id: PC2

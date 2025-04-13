@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744503054822
+current_stage: None
+description: null
+last_updated_timestamp: 1744503054822
+name: kobe_shot_regression_gradient_boosting
+run_id: cbeb2d9a8d784dd586086cd96a114d3a
+run_link: null
+source: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/cbeb2d9a8d784dd586086cd96a114d3a/artifacts/regression_models/gradient_boosting
+status: READY
+status_message: null
+storage_location: file:///F:/0-PROJETO-MACHINE-COPILOT/mlruns/0/cbeb2d9a8d784dd586086cd96a114d3a/artifacts/regression_models/gradient_boosting
+user_id: null
+version: 1

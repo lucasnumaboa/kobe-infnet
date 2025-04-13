@@ -1,0 +1,573 @@
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Iniciando pipeline de aplicação
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Carregando dados de produção
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Lendo dados de: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Dados de produção carregados. Formato: (6426, 25)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Filtrando dados para incluir apenas as colunas especificadas
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Coluna shot_made_flag encontrada nos dados de produção
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Formato inicial dos dados filtrados: (6426, 7)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Formato após remover valores faltantes: (5412, 7)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Dados filtrados. Formato final: (5412, 7)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Carregando o melhor modelo treinado
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Informações do modelo encontradas: logistic_regression (Classification)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Carregando modelo de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Aplicando modelo aos dados de produção
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Formato dos dados de entrada: (5412, 7)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Removendo coluna shot_made_flag dos dados de entrada para predição
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Feature names do modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Colunas reordenadas para predição: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Predições realizadas com sucesso
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Avaliando predições do modelo
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Log Loss: 0.6289
+[2025-04-12 20:01:56] PIPELINE APLICACAO: F1 Score: 0.0000
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Salvando resultados e registrando métricas
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Predições salvas em: F:\0-PROJETO-MACHINE-COPILOT\data\results\production_predictions_20250412200156.parquet
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Criando dashboard de monitoramento
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Dashboard de monitoramento criado em: F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Iniciando retreinamento do modelo com novos dados
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Iniciando processo de retreinamento com novos dados de produção
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Erro durante o retreinamento: invalid syntax (retraining_pipeline.py, line 1)
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Retreinamento não foi bem sucedido, mantendo modelo atual
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Pipeline de aplicação concluído com sucesso
+[2025-04-12 20:01:56] PIPELINE APLICACAO: Para visualizar o dashboard, execute: streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Iniciando pipeline de aplicação
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Carregando dados de produção
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Lendo dados de: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Dados de produção carregados. Formato: (6426, 25)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Filtrando dados para incluir apenas as colunas especificadas
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Coluna shot_made_flag encontrada nos dados de produção
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Formato inicial dos dados filtrados: (6426, 7)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Formato após remover valores faltantes: (5412, 7)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Dados filtrados. Formato final: (5412, 7)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Carregando o melhor modelo treinado
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Informações do modelo encontradas: logistic_regression (Classification)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Carregando modelo de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Aplicando modelo aos dados de produção
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Formato dos dados de entrada: (5412, 7)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Removendo coluna shot_made_flag dos dados de entrada para predição
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Feature names do modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Colunas reordenadas para predição: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Predições realizadas com sucesso
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Avaliando predições do modelo
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Log Loss: 0.6289
+[2025-04-12 20:10:19] PIPELINE APLICACAO: F1 Score: 0.0000
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Salvando resultados e registrando métricas
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Predições salvas em: F:\0-PROJETO-MACHINE-COPILOT\data\results\production_predictions_20250412201019.parquet
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Criando dashboard de monitoramento
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Dashboard de monitoramento criado em: F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Iniciando retreinamento do modelo com novos dados
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Iniciando processo de retreinamento com novos dados de produção
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Erro durante o retreinamento: invalid syntax (retraining_pipeline.py, line 1)
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Retreinamento não foi bem sucedido, mantendo modelo atual
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Pipeline de aplicação concluído com sucesso
+[2025-04-12 20:10:19] PIPELINE APLICACAO: Para visualizar o dashboard, execute: streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 21:06:08] TRAINING: Starting unified model training pipeline. Mode: both
+[2025-04-12 21:06:08] TRAINING: Loading training and testing data
+[2025-04-12 21:06:08] TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:06:08] TRAINING: Loading testing data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 21:06:08] TRAINING: Training data shape: (16228, 7), Testing data shape: (4057, 7)
+[2025-04-12 21:06:08] TRAINING: Preparing features and target variable
+[2025-04-12 21:06:08] TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 21:06:08] TRAINING: Preparing features and target variable
+[2025-04-12 21:06:08] TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 21:06:08] TRAINING: Error in unified model training pipeline: Run with UUID c6864159e40248009f230d751e745cf9 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[2025-04-12 21:10:07] TRAINING: Starting unified model training pipeline. Mode: both
+[2025-04-12 21:10:07] TRAINING: Loading training and testing data
+[2025-04-12 21:10:07] TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:10:07] TRAINING: Loading testing data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 21:10:07] TRAINING: Training data shape: (16228, 7), Testing data shape: (4057, 7)
+[2025-04-12 21:10:07] TRAINING: Preparing features and target variable
+[2025-04-12 21:10:07] TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 21:10:07] TRAINING: Preparing features and target variable
+[2025-04-12 21:10:07] TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 21:10:07] CLASSIFICATION: Starting classification model training
+[2025-04-12 21:10:07] CLASSIFICATION: Training Logistic Regression model
+[2025-04-12 21:10:07] CLASSIFICATION: Logistic Regression model trained successfully
+[2025-04-12 21:10:07] CLASSIFICATION: Logistic Regression Log Loss: 0.6793
+[2025-04-12 21:10:07] CLASSIFICATION: Logistic Regression F1 Score: 0.5368
+[2025-04-12 21:10:07] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.61      0.59      2120
+         1.0       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 21:10:07] CLASSIFICATION: Saving logistic_regression model
+[2025-04-12 21:10:07] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:10:16] CLASSIFICATION: Model logistic_regression registered with MLflow
+[2025-04-12 21:10:16] CLASSIFICATION: Training Decision Tree model
+[2025-04-12 21:10:16] CLASSIFICATION: Decision Tree model trained successfully
+[2025-04-12 21:10:16] CLASSIFICATION: Decision Tree Log Loss: 0.6829
+[2025-04-12 21:10:16] CLASSIFICATION: Decision Tree F1 Score: 0.4556
+[2025-04-12 21:10:16] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.82      0.68      2120
+         1.0       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 21:10:16] CLASSIFICATION: Saving decision_tree model
+[2025-04-12 21:10:16] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 21:10:21] CLASSIFICATION: Model decision_tree registered with MLflow
+[2025-04-12 21:10:21] CLASSIFICATION: Training Random Forest Classifier
+[2025-04-12 21:10:22] CLASSIFICATION: Random Forest Classifier trained successfully
+[2025-04-12 21:10:22] CLASSIFICATION: Random Forest Classifier Log Loss: 0.6756
+[2025-04-12 21:10:22] CLASSIFICATION: Random Forest Classifier F1 Score: 0.5019
+[2025-04-12 21:10:22] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.71      0.64      2120
+         1.0       0.58      0.44      0.50      1937
+
+    accuracy                           0.58      4057
+   macro avg       0.58      0.58      0.57      4057
+weighted avg       0.58      0.58      0.57      4057
+
+[2025-04-12 21:10:22] CLASSIFICATION: Saving random_forest model
+[2025-04-12 21:10:22] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 21:10:27] CLASSIFICATION: Model random_forest registered with MLflow
+[2025-04-12 21:10:27] CLASSIFICATION: Best classification model: random_forest (Log Loss: 0.6756)
+[2025-04-12 21:10:27] TRAINING: Classification model training completed
+[2025-04-12 21:10:27] REGRESSION: Starting regression model training
+[2025-04-12 21:10:27] REGRESSION: Training Linear Regression model
+[2025-04-12 21:10:27] REGRESSION: Linear Regression model trained successfully
+[2025-04-12 21:10:27] REGRESSION: Evaluating LinearRegression model
+[2025-04-12 21:10:27] REGRESSION: MSE: 0.2426, RMSE: 0.4925, MAE: 0.4844, R²: 0.0276
+[2025-04-12 21:10:27] REGRESSION: Saving linear_regression model
+[2025-04-12 21:10:27] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 21:10:33] REGRESSION: Model linear_regression registered with MLflow
+[2025-04-12 21:10:33] REGRESSION: Training ElasticNet model with hyperparameter tuning
+[2025-04-12 21:10:37] REGRESSION: ElasticNet best parameters: {'alpha': 0.1, 'l1_ratio': 0.1}
+[2025-04-12 21:10:37] REGRESSION: ElasticNet model trained successfully
+[2025-04-12 21:10:37] REGRESSION: Evaluating ElasticNet model
+[2025-04-12 21:10:37] REGRESSION: MSE: 0.2428, RMSE: 0.4928, MAE: 0.4852, R²: 0.0268
+[2025-04-12 21:10:37] REGRESSION: Saving elastic_net model
+[2025-04-12 21:10:37] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 21:10:42] REGRESSION: Model elastic_net registered with MLflow
+[2025-04-12 21:10:42] REGRESSION: Training Random Forest Regressor
+[2025-04-12 21:10:43] REGRESSION: Random Forest Regressor trained successfully
+[2025-04-12 21:10:43] REGRESSION: Evaluating RandomForestRegressor model
+[2025-04-12 21:10:43] REGRESSION: MSE: 0.2641, RMSE: 0.5139, MAE: 0.4803, R²: -0.0584
+[2025-04-12 21:10:43] REGRESSION: Saving random_forest model
+[2025-04-12 21:10:43] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 21:10:48] REGRESSION: Model random_forest registered with MLflow
+[2025-04-12 21:10:48] REGRESSION: Training Gradient Boosting model
+[2025-04-12 21:10:49] REGRESSION: Gradient Boosting model trained successfully
+[2025-04-12 21:10:49] REGRESSION: Evaluating GradientBoostingRegressor model
+[2025-04-12 21:10:49] REGRESSION: MSE: 0.2404, RMSE: 0.4903, MAE: 0.4793, R²: 0.0366
+[2025-04-12 21:10:49] REGRESSION: Saving gradient_boosting model
+[2025-04-12 21:10:49] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 21:10:54] REGRESSION: Model gradient_boosting registered with MLflow
+[2025-04-12 21:10:54] REGRESSION: Best regression model: gradient_boosting (R²: 0.0366)
+[2025-04-12 21:10:54] TRAINING: Regression model training completed
+[2025-04-12 21:10:54] TRAINING: Updated model info at F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:10:54] TRAINING: Unified model training pipeline completed successfully
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Iniciando pipeline de aplicação
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Carregando dados de produção
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Lendo dados de: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Dados de produção carregados. Formato: (6426, 25)
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Filtrando dados para incluir apenas as colunas especificadas
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Coluna shot_made_flag encontrada nos dados de produção
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Formato inicial dos dados filtrados: (6426, 7)
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Formato após remover valores faltantes: (5412, 7)
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Dados filtrados. Formato final: (5412, 7)
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Carregando o melhor modelo treinado
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Informações do modelo encontradas: None (None)
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Carregando modelo de regressão logística de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Aplicando modelo aos dados de produção
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Formato dos dados de entrada: (5412, 7)
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Removendo coluna shot_made_flag dos dados de entrada para predição
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Feature names do modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Colunas reordenadas para predição: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Predições realizadas com sucesso
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Avaliando predições do modelo
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Log Loss: 0.6289
+[2025-04-12 21:12:14] PIPELINE APLICACAO: F1 Score: 0.0000
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Salvando resultados e registrando métricas
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Predições salvas em: F:\0-PROJETO-MACHINE-COPILOT\data\results\production_predictions_20250412211214.parquet
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Criando dashboard de monitoramento
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Dashboard de monitoramento criado em: F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Iniciando retreinamento do modelo com novos dados
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Iniciando processo de retreinamento com novos dados de produção
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Iniciando pipeline de retreinamento
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Carregando dados de treinamento existentes
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Lendo dados de treinamento de: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Carregando o modelo atual
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Informações do modelo encontradas: None (None)
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Informações de deployment não encontradas, procurando modelo padrão
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Carregando modelo de regressão logística de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Preparando dados de produção para retreinamento
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Dados preparados para retreinamento. Formato: (5412, 7)
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Combinando dados de treinamento existentes com novos dados de produção
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Dados combinados. Formato original: (16228, 7), Novos dados: (5412, 7), Combinados: (21640, 7)
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Treinando modelos com dados combinados
+[2025-04-12 21:12:14] PIPELINE RETREINAMENTO: Erro no pipeline de retreinamento: Run with UUID 02bc216d84f54a668def8c509341c522 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Modelo retreinado com sucesso!
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Modelo retreinado e atualizado com sucesso!
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Pipeline de aplicação concluído com sucesso
+[2025-04-12 21:12:14] PIPELINE APLICACAO: Para visualizar o dashboard, execute: streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 21:13:45] TRAINING: Starting unified model training pipeline. Mode: both
+[2025-04-12 21:13:45] TRAINING: Loading training and testing data
+[2025-04-12 21:13:45] TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:13:45] TRAINING: Loading testing data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 21:13:45] TRAINING: Training data shape: (16228, 7), Testing data shape: (4057, 7)
+[2025-04-12 21:13:45] TRAINING: Preparing features and target variable
+[2025-04-12 21:13:45] TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 21:13:45] TRAINING: Preparing features and target variable
+[2025-04-12 21:13:45] TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 21:13:45] CLASSIFICATION: Starting classification model training
+[2025-04-12 21:13:45] CLASSIFICATION: Training Logistic Regression model
+[2025-04-12 21:13:45] CLASSIFICATION: Logistic Regression model trained successfully
+[2025-04-12 21:13:45] CLASSIFICATION: Logistic Regression Log Loss: 0.6793
+[2025-04-12 21:13:45] CLASSIFICATION: Logistic Regression F1 Score: 0.5368
+[2025-04-12 21:13:45] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.61      0.59      2120
+         1.0       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 21:13:45] CLASSIFICATION: Saving logistic_regression model
+[2025-04-12 21:13:45] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:13:53] CLASSIFICATION: Model logistic_regression registered with MLflow
+[2025-04-12 21:13:53] CLASSIFICATION: Training Decision Tree model
+[2025-04-12 21:13:53] CLASSIFICATION: Decision Tree model trained successfully
+[2025-04-12 21:13:53] CLASSIFICATION: Decision Tree Log Loss: 0.6829
+[2025-04-12 21:13:53] CLASSIFICATION: Decision Tree F1 Score: 0.4556
+[2025-04-12 21:13:53] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.82      0.68      2120
+         1.0       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 21:13:53] CLASSIFICATION: Saving decision_tree model
+[2025-04-12 21:13:53] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 21:13:59] CLASSIFICATION: Model decision_tree registered with MLflow
+[2025-04-12 21:13:59] CLASSIFICATION: Training Random Forest Classifier
+[2025-04-12 21:14:00] CLASSIFICATION: Random Forest Classifier trained successfully
+[2025-04-12 21:14:00] CLASSIFICATION: Random Forest Classifier Log Loss: 0.6756
+[2025-04-12 21:14:00] CLASSIFICATION: Random Forest Classifier F1 Score: 0.5019
+[2025-04-12 21:14:00] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.71      0.64      2120
+         1.0       0.58      0.44      0.50      1937
+
+    accuracy                           0.58      4057
+   macro avg       0.58      0.58      0.57      4057
+weighted avg       0.58      0.58      0.57      4057
+
+[2025-04-12 21:14:00] CLASSIFICATION: Saving random_forest model
+[2025-04-12 21:14:00] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 21:14:06] CLASSIFICATION: Model random_forest registered with MLflow
+[2025-04-12 21:14:06] CLASSIFICATION: Best classification model: random_forest (Log Loss: 0.6756)
+[2025-04-12 21:14:06] TRAINING: Classification model training completed
+[2025-04-12 21:14:06] REGRESSION: Starting regression model training
+[2025-04-12 21:14:06] REGRESSION: Training Linear Regression model
+[2025-04-12 21:14:06] REGRESSION: Linear Regression model trained successfully
+[2025-04-12 21:14:06] REGRESSION: Evaluating LinearRegression model
+[2025-04-12 21:14:06] REGRESSION: MSE: 0.2426, RMSE: 0.4925, MAE: 0.4844, R²: 0.0276
+[2025-04-12 21:14:06] REGRESSION: Saving linear_regression model
+[2025-04-12 21:14:06] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 21:14:11] REGRESSION: Model linear_regression registered with MLflow
+[2025-04-12 21:14:11] REGRESSION: Training ElasticNet model with hyperparameter tuning
+[2025-04-12 21:14:17] REGRESSION: ElasticNet best parameters: {'alpha': 0.1, 'l1_ratio': 0.1}
+[2025-04-12 21:14:17] REGRESSION: ElasticNet model trained successfully
+[2025-04-12 21:14:17] REGRESSION: Evaluating ElasticNet model
+[2025-04-12 21:14:17] REGRESSION: MSE: 0.2428, RMSE: 0.4928, MAE: 0.4852, R²: 0.0268
+[2025-04-12 21:14:17] REGRESSION: Saving elastic_net model
+[2025-04-12 21:14:17] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 21:14:23] REGRESSION: Model elastic_net registered with MLflow
+[2025-04-12 21:14:23] REGRESSION: Training Random Forest Regressor
+[2025-04-12 21:14:23] REGRESSION: Random Forest Regressor trained successfully
+[2025-04-12 21:14:23] REGRESSION: Evaluating RandomForestRegressor model
+[2025-04-12 21:14:23] REGRESSION: MSE: 0.2641, RMSE: 0.5139, MAE: 0.4803, R²: -0.0584
+[2025-04-12 21:14:23] REGRESSION: Saving random_forest model
+[2025-04-12 21:14:23] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 21:14:29] REGRESSION: Model random_forest registered with MLflow
+[2025-04-12 21:14:29] REGRESSION: Training Gradient Boosting model
+[2025-04-12 21:14:31] REGRESSION: Gradient Boosting model trained successfully
+[2025-04-12 21:14:31] REGRESSION: Evaluating GradientBoostingRegressor model
+[2025-04-12 21:14:31] REGRESSION: MSE: 0.2404, RMSE: 0.4903, MAE: 0.4793, R²: 0.0366
+[2025-04-12 21:14:31] REGRESSION: Saving gradient_boosting model
+[2025-04-12 21:14:31] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 21:14:37] REGRESSION: Model gradient_boosting registered with MLflow
+[2025-04-12 21:14:37] REGRESSION: Best regression model: gradient_boosting (R²: 0.0366)
+[2025-04-12 21:14:37] TRAINING: Regression model training completed
+[2025-04-12 21:14:37] TRAINING: Updated model info at F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:14:37] TRAINING: Unified model training pipeline completed successfully
+[2025-04-12 21:14:58] TRAINING: Starting unified model training pipeline. Mode: both, Force retrain: False
+[2025-04-12 21:14:58] TRAINING: Loading training and testing data
+[2025-04-12 21:14:58] TRAINING: Loading training data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:14:58] TRAINING: Loading testing data from: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_test.parquet
+[2025-04-12 21:14:58] TRAINING: Training data shape: (16228, 7), Testing data shape: (4057, 7)
+[2025-04-12 21:14:58] TRAINING: Preparing features and target variable
+[2025-04-12 21:14:58] TRAINING: Features shape: (16228, 6), Target shape: (16228,)
+[2025-04-12 21:14:58] TRAINING: Preparing features and target variable
+[2025-04-12 21:14:58] TRAINING: Features shape: (4057, 6), Target shape: (4057,)
+[2025-04-12 21:14:58] CLASSIFICATION: Starting classification model training
+[2025-04-12 21:14:58] CLASSIFICATION: Training Logistic Regression model
+[2025-04-12 21:14:58] CLASSIFICATION: Logistic Regression model trained successfully
+[2025-04-12 21:14:58] CLASSIFICATION: Logistic Regression Log Loss: 0.6793
+[2025-04-12 21:14:58] CLASSIFICATION: Logistic Regression F1 Score: 0.5368
+[2025-04-12 21:14:58] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.61      0.59      2120
+         1.0       0.55      0.53      0.54      1937
+
+    accuracy                           0.57      4057
+   macro avg       0.57      0.57      0.57      4057
+weighted avg       0.57      0.57      0.57      4057
+
+[2025-04-12 21:14:58] CLASSIFICATION: Saving logistic_regression model
+[2025-04-12 21:14:58] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:15:06] CLASSIFICATION: Model logistic_regression registered with MLflow
+[2025-04-12 21:15:06] CLASSIFICATION: Training Decision Tree model
+[2025-04-12 21:15:06] CLASSIFICATION: Decision Tree model trained successfully
+[2025-04-12 21:15:06] CLASSIFICATION: Decision Tree Log Loss: 0.6829
+[2025-04-12 21:15:06] CLASSIFICATION: Decision Tree F1 Score: 0.4556
+[2025-04-12 21:15:06] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.82      0.68      2120
+         1.0       0.65      0.35      0.46      1937
+
+    accuracy                           0.60      4057
+   macro avg       0.61      0.59      0.57      4057
+weighted avg       0.61      0.60      0.57      4057
+
+[2025-04-12 21:15:06] CLASSIFICATION: Saving decision_tree model
+[2025-04-12 21:15:06] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\decision_tree.pkl
+[2025-04-12 21:15:12] CLASSIFICATION: Model decision_tree registered with MLflow
+[2025-04-12 21:15:12] CLASSIFICATION: Training Random Forest Classifier
+[2025-04-12 21:15:12] CLASSIFICATION: Random Forest Classifier trained successfully
+[2025-04-12 21:15:12] CLASSIFICATION: Random Forest Classifier Log Loss: 0.6756
+[2025-04-12 21:15:12] CLASSIFICATION: Random Forest Classifier F1 Score: 0.5019
+[2025-04-12 21:15:12] CLASSIFICATION: 
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.58      0.71      0.64      2120
+         1.0       0.58      0.44      0.50      1937
+
+    accuracy                           0.58      4057
+   macro avg       0.58      0.58      0.57      4057
+weighted avg       0.58      0.58      0.57      4057
+
+[2025-04-12 21:15:12] CLASSIFICATION: Saving random_forest model
+[2025-04-12 21:15:13] CLASSIFICATION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 21:15:18] CLASSIFICATION: Model random_forest registered with MLflow
+[2025-04-12 21:15:18] CLASSIFICATION: Best classification model: random_forest (Log Loss: 0.6756)
+[2025-04-12 21:15:18] TRAINING: Classification model training completed
+[2025-04-12 21:15:18] REGRESSION: Starting regression model training
+[2025-04-12 21:15:18] REGRESSION: Training Linear Regression model
+[2025-04-12 21:15:18] REGRESSION: Linear Regression model trained successfully
+[2025-04-12 21:15:18] REGRESSION: Evaluating LinearRegression model
+[2025-04-12 21:15:18] REGRESSION: MSE: 0.2426, RMSE: 0.4925, MAE: 0.4844, R²: 0.0276
+[2025-04-12 21:15:18] REGRESSION: Saving linear_regression model
+[2025-04-12 21:15:18] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\linear_regression.joblib
+[2025-04-12 21:15:24] REGRESSION: Model linear_regression registered with MLflow
+[2025-04-12 21:15:24] REGRESSION: Training ElasticNet model with hyperparameter tuning
+[2025-04-12 21:15:30] REGRESSION: ElasticNet best parameters: {'alpha': 0.1, 'l1_ratio': 0.1}
+[2025-04-12 21:15:30] REGRESSION: ElasticNet model trained successfully
+[2025-04-12 21:15:30] REGRESSION: Evaluating ElasticNet model
+[2025-04-12 21:15:30] REGRESSION: MSE: 0.2428, RMSE: 0.4928, MAE: 0.4852, R²: 0.0268
+[2025-04-12 21:15:30] REGRESSION: Saving elastic_net model
+[2025-04-12 21:15:30] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\elastic_net.joblib
+[2025-04-12 21:15:35] REGRESSION: Model elastic_net registered with MLflow
+[2025-04-12 21:15:35] REGRESSION: Training Random Forest Regressor
+[2025-04-12 21:15:36] REGRESSION: Random Forest Regressor trained successfully
+[2025-04-12 21:15:36] REGRESSION: Evaluating RandomForestRegressor model
+[2025-04-12 21:15:36] REGRESSION: MSE: 0.2641, RMSE: 0.5139, MAE: 0.4803, R²: -0.0584
+[2025-04-12 21:15:36] REGRESSION: Saving random_forest model
+[2025-04-12 21:15:36] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\random_forest.joblib
+[2025-04-12 21:15:42] REGRESSION: Model random_forest registered with MLflow
+[2025-04-12 21:15:42] REGRESSION: Training Gradient Boosting model
+[2025-04-12 21:15:43] REGRESSION: Gradient Boosting model trained successfully
+[2025-04-12 21:15:43] REGRESSION: Evaluating GradientBoostingRegressor model
+[2025-04-12 21:15:43] REGRESSION: MSE: 0.2404, RMSE: 0.4903, MAE: 0.4793, R²: 0.0366
+[2025-04-12 21:15:43] REGRESSION: Saving gradient_boosting model
+[2025-04-12 21:15:43] REGRESSION: Model saved to F:\0-PROJETO-MACHINE-COPILOT\models\regression\gradient_boosting.joblib
+[2025-04-12 21:15:49] REGRESSION: Model gradient_boosting registered with MLflow
+[2025-04-12 21:15:49] REGRESSION: Best regression model: gradient_boosting (R²: 0.0366)
+[2025-04-12 21:15:49] TRAINING: Regression model training completed
+[2025-04-12 21:15:49] TRAINING: Updated model info at F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:15:49] TRAINING: Unified model training pipeline completed successfully
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Iniciando pipeline de aplicação
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Carregando dados de produção
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Lendo dados de: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Dados de produção carregados. Formato: (6426, 25)
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Filtrando dados para incluir apenas as colunas especificadas
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Coluna shot_made_flag encontrada nos dados de produção
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Formato inicial dos dados filtrados: (6426, 7)
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Formato após remover valores faltantes: (5412, 7)
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Dados filtrados. Formato final: (5412, 7)
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Carregando o melhor modelo treinado
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Informações do modelo encontradas: None (None)
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Carregando modelo de regressão logística de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Aplicando modelo aos dados de produção
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Formato dos dados de entrada: (5412, 7)
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Removendo coluna shot_made_flag dos dados de entrada para predição
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Feature names do modelo: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Colunas reordenadas para predição: ['lat', 'lon', 'minutes_remaining', 'period', 'playoffs', 'shot_distance']
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Predições realizadas com sucesso
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Avaliando predições do modelo
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Log Loss: 0.6289
+[2025-04-12 21:16:16] PIPELINE APLICACAO: F1 Score: 0.0000
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Salvando resultados e registrando métricas
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Predições salvas em: F:\0-PROJETO-MACHINE-COPILOT\data\results\production_predictions_20250412211616.parquet
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Criando dashboard de monitoramento
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Dashboard de monitoramento criado em: F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Iniciando retreinamento do modelo com novos dados
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Iniciando processo de retreinamento com novos dados de produção
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Iniciando pipeline de retreinamento
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Carregando dados de treinamento existentes
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Lendo dados de treinamento de: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Carregando o modelo atual
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Informações do modelo encontradas: None (None)
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Informações de deployment não encontradas, procurando modelo padrão
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Carregando modelo de regressão logística de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Preparando dados de produção para retreinamento
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Dados preparados para retreinamento. Formato: (5412, 7)
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Combinando dados de treinamento existentes com novos dados de produção
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Dados combinados. Formato original: (16228, 7), Novos dados: (5412, 7), Combinados: (21640, 7)
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Treinando modelos com dados combinados
+[2025-04-12 21:16:16] PIPELINE RETREINAMENTO: Erro no pipeline de retreinamento: Run with UUID 25100fc13bbd4435b3595bbb06141bfc is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Modelo retreinado com sucesso!
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Modelo retreinado e atualizado com sucesso!
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Pipeline de aplicação concluído com sucesso
+[2025-04-12 21:16:16] PIPELINE APLICACAO: Para visualizar o dashboard, execute: streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Iniciando teste de pipeline de retreinamento
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Iniciando pipeline de retreinamento
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Carregando dados de treinamento existentes
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Lendo dados de treinamento de: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Carregando o modelo atual
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Informações do modelo encontradas: None (None)
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Informações de deployment não encontradas, procurando modelo padrão
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Carregando modelo de regressão logística de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Preparando dados de produção para retreinamento
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Dados preparados para retreinamento. Formato: (5412, 7)
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Combinando dados de treinamento existentes com novos dados de produção
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Dados combinados. Formato original: (16228, 7), Novos dados: (5412, 7), Combinados: (21640, 7)
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Treinando modelos com dados combinados
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Treinando modelo de regressão logística
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Regressão Logística - Acurácia: 0.5959, F1: 0.4650, AUC: 0.6085, Log Loss: 0.6673
+[2025-04-12 21:18:18] PIPELINE RETREINAMENTO: Treinando modelo Random Forest
+[2025-04-12 21:18:21] PIPELINE RETREINAMENTO: Random Forest - Acurácia: 0.5758, F1: 0.4920, AUC: 0.5853, Log Loss: 0.7291
+[2025-04-12 21:18:35] PIPELINE RETREINAMENTO: Selecionando e salvando o melhor modelo
+[2025-04-12 21:18:35] PIPELINE RETREINAMENTO: Melhor modelo: logistic_regression com Log Loss: 0.6673
+[2025-04-12 21:18:35] PIPELINE RETREINAMENTO: Erro ao avaliar modelo atual: The feature names should match those that were passed during fit.
+Feature names must be in the same order as they were in fit.
+. Prosseguindo com o novo modelo.
+[2025-04-12 21:18:35] PIPELINE RETREINAMENTO: Novo modelo salvo em: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:18:35] PIPELINE RETREINAMENTO: Informações de deployment atualizadas: {'model_name': 'logistic_regression', 'model_type': 'Classification', 'timestamp': '2025-04-12 21:18:35', 'metrics': {'log_loss': 0.6673464579094458, 'f1_score': 0.4649739981645763, 'auc': 0.6084682746659662}}
+[2025-04-12 21:18:35] PIPELINE RETREINAMENTO: Criando gráficos de avaliação de modelos
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Gráficos de avaliação salvos com sucesso
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Salvando conjunto de dados combinado para uso futuro
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Dataset combinado salvo em: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Pipeline de retreinamento concluído com sucesso. Melhor modelo: logistic_regression
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Iniciando teste de pipeline de retreinamento
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Iniciando pipeline de retreinamento
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Carregando dados de treinamento existentes
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Lendo dados de treinamento de: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Carregando o modelo atual
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Informações do modelo encontradas: logistic_regression (Classification)
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Carregando modelo de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\logistic_regression.pkl
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Preparando dados de produção para retreinamento
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Dados preparados para retreinamento. Formato: (5412, 7)
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Combinando dados de treinamento existentes com novos dados de produção
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Dados combinados. Formato original: (21640, 7), Novos dados: (5412, 7), Combinados: (27052, 7)
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Treinando modelos com dados combinados
+[2025-04-12 21:18:38] PIPELINE RETREINAMENTO: Treinando modelo de regressão logística
+[2025-04-12 21:18:39] PIPELINE RETREINAMENTO: Regressão Logística - Acurácia: 0.6158, F1: 0.4352, AUC: 0.6220, Log Loss: 0.6573
+[2025-04-12 21:18:39] PIPELINE RETREINAMENTO: Treinando modelo Random Forest
+[2025-04-12 21:18:42] PIPELINE RETREINAMENTO: Random Forest - Acurácia: 0.7054, F1: 0.6410, AUC: 0.7841, Log Loss: 0.5608
+[2025-04-12 21:18:54] PIPELINE RETREINAMENTO: Selecionando e salvando o melhor modelo
+[2025-04-12 21:18:54] PIPELINE RETREINAMENTO: Melhor modelo: random_forest com Log Loss: 0.5608
+[2025-04-12 21:18:54] PIPELINE RETREINAMENTO: Modelo atual (logistic_regression) - Log Loss: 0.6572
+[2025-04-12 21:18:54] PIPELINE RETREINAMENTO: Novo modelo salvo em: F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 21:18:54] PIPELINE RETREINAMENTO: Informações de deployment atualizadas: {'model_name': 'random_forest', 'model_type': 'Classification', 'timestamp': '2025-04-12 21:18:54', 'metrics': {'log_loss': 0.5607890243359818, 'f1_score': 0.640990990990991, 'auc': 0.784144268542457}}
+[2025-04-12 21:18:54] PIPELINE RETREINAMENTO: Criando gráficos de avaliação de modelos
+[2025-04-12 21:18:57] PIPELINE RETREINAMENTO: Gráficos de avaliação salvos com sucesso
+[2025-04-12 21:18:57] PIPELINE RETREINAMENTO: Salvando conjunto de dados combinado para uso futuro
+[2025-04-12 21:18:57] PIPELINE RETREINAMENTO: Dataset combinado salvo em: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:18:57] PIPELINE RETREINAMENTO: Pipeline de retreinamento concluído com sucesso. Melhor modelo: random_forest
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Iniciando pipeline de aplicação
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Carregando dados de produção
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Lendo dados de: F:\0-PROJETO-MACHINE-COPILOT\data\raw\dataset_kobe_prod.parquet
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Dados de produção carregados. Formato: (6426, 25)
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Filtrando dados para incluir apenas as colunas especificadas
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Columns available in dataset: ['action_type', 'combined_shot_type', 'game_event_id', 'game_id', 'lat', 'loc_x', 'loc_y', 'lon', 'minutes_remaining', 'period', 'playoffs', 'season', 'seconds_remaining', 'shot_distance', 'shot_made_flag', 'shot_type', 'shot_zone_area', 'shot_zone_basic', 'shot_zone_range', 'team_id', 'team_name', 'game_date', 'matchup', 'opponent', 'shot_id']
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Coluna shot_made_flag encontrada nos dados de produção
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Formato inicial dos dados filtrados: (6426, 7)
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Formato após remover valores faltantes: (5412, 7)
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Dados filtrados. Formato final: (5412, 7)
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Carregando o melhor modelo treinado
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Informações do modelo encontradas: random_forest (Classification)
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Carregando modelo de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Aplicando modelo aos dados de produção
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Formato dos dados de entrada: (5412, 7)
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Removendo coluna shot_made_flag dos dados de entrada para predição
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Feature names do modelo: ['minutes_remaining', 'period', 'playoffs', 'lon', 'lat', 'shot_distance']
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Colunas reordenadas para predição: ['minutes_remaining', 'period', 'playoffs', 'lon', 'lat', 'shot_distance']
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Predições realizadas com sucesso
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Avaliando predições do modelo
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Log Loss: 0.1351
+[2025-04-12 21:19:14] PIPELINE APLICACAO: F1 Score: 0.9751
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Salvando resultados e registrando métricas
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Predições salvas em: F:\0-PROJETO-MACHINE-COPILOT\data\results\production_predictions_20250412211914.parquet
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Criando dashboard de monitoramento
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Dashboard de monitoramento criado em: F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Iniciando retreinamento do modelo com novos dados
+[2025-04-12 21:19:14] PIPELINE APLICACAO: Iniciando processo de retreinamento com novos dados de produção
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Iniciando pipeline de retreinamento
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Carregando dados de treinamento existentes
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Lendo dados de treinamento de: F:\0-PROJETO-MACHINE-COPILOT\data\processed\base_train.parquet
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Carregando o modelo atual
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Carregando informações de deployment de: F:\0-PROJETO-MACHINE-COPILOT\models\deployment\model_info.yaml
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Informações do modelo encontradas: random_forest (Classification)
+[2025-04-12 21:19:14] PIPELINE RETREINAMENTO: Carregando modelo de: F:\0-PROJETO-MACHINE-COPILOT\models\classification\random_forest.pkl
+[2025-04-12 21:19:15] PIPELINE RETREINAMENTO: Preparando dados de produção para retreinamento
+[2025-04-12 21:19:15] PIPELINE RETREINAMENTO: Dados preparados para retreinamento. Formato: (5412, 7)
+[2025-04-12 21:19:15] PIPELINE RETREINAMENTO: Combinando dados de treinamento existentes com novos dados de produção
+[2025-04-12 21:19:15] PIPELINE RETREINAMENTO: Dados combinados. Formato original: (27052, 7), Novos dados: (5412, 7), Combinados: (32464, 7)
+[2025-04-12 21:19:15] PIPELINE RETREINAMENTO: Treinando modelos com dados combinados
+[2025-04-12 21:19:15] PIPELINE RETREINAMENTO: Erro no pipeline de retreinamento: Run with UUID cd3cd982d95c4c2baa374a7af7b86d85 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[2025-04-12 21:19:15] PIPELINE APLICACAO: Modelo retreinado com sucesso!
+[2025-04-12 21:19:15] PIPELINE APLICACAO: Modelo retreinado e atualizado com sucesso!
+[2025-04-12 21:19:15] PIPELINE APLICACAO: Pipeline de aplicação concluído com sucesso
+[2025-04-12 21:19:15] PIPELINE APLICACAO: Para visualizar o dashboard, execute: streamlit run F:\0-PROJETO-MACHINE-COPILOT\app\monitoring_dashboard.py
