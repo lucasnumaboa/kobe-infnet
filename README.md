@@ -65,6 +65,9 @@ O diagrama abaixo (disponível no arquivo `kobe_prediction_flowchart.drawio`) il
 └── requirements.txt                # Dependências Python
 ```
 
+![Fluxograma do Processo](fluxograma-processo.png)
+
+
 ## Ferramentas Utilizadas e Seus Papéis
 
 ### MLflow
